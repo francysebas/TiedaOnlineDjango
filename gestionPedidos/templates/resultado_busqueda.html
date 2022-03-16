@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resultado busqueda</title>
+</head>
+<body>
+  <p>estas buscando: <strong> {{query}}</strong></p>
+  {%if  articulo%}
+    <p>Articulos encontrados: {{articulo|length}} articulos</p>
+    <ul>
+
+        {%for articulos in articulo%}
+            <li>
+                {{articulos.nombre}} &nbsp; {{articulos.seccion}} &nbsp; {{articulos.precio}}
+
+            </li>
+        {% endfor %}
+    </ul>
+
+  {% else %}
+    <p>articulo no encontrado</p>
+
+  {%endif%}
+
+</body>
+</html>
